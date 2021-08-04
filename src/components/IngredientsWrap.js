@@ -9,6 +9,7 @@ const IngredientsWrap = ({ ingredients }) => {
       {ingredients.map((ingredient) => {
         return (
           <Ingredient
+						key={ingredient.name}
             name={ingredient.name}
             quantity={ingredient.quantity}
             stocked={ingredient.stocked}
