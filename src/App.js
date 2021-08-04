@@ -1,7 +1,10 @@
+import React from 'react';
+import RecipeCollection from './components/RecipeCollection';
+
 function App() {
   return (
     <div className="App">
-      Recipe App
+      <RecipeCollection />
     </div>
   );
 }

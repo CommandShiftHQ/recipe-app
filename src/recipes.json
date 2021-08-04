@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "Vegetable Nihari",
+    "description": "Spicy vegetable curry originating from Pakistan",
+    "ingredients": [
+      {
+        "name": "carrots",
+        "quantity": 5,
+        "stocked": true
+      },
+      {
+        "name": "sweet potatoes",
+        "quantity": 1,
+        "stocked": true
+      },
+      {
+        "name": "onions",
+        "quantity": 2,
+        "stocked": true
+      },
+      {
+        "name": "garlic cloves",
+        "quantity": 2,
+        "stocked": false
+      },
+      {
+        "name": "ginger (tsp)",
+        "quantity": 1,
+        "stocked": true
+      },
+      {
+        "name": "green chillies",
+        "quantity": 3,
+        "stocked": false
+      },
+      {
+        "name": "tomato puree (tbsp)",
+        "quantity": 2,
+        "stocked": true
+      }
+    ],
+    "rating": 4
+  }
+]
