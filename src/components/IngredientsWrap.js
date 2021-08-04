@@ -5,15 +5,18 @@ import Ingredient from "./Ingredient";
 
 const IngredientsWrap = ({ ingredients }) => {
 	const [ingredientsList, setIngredientsList] = useState(ingredients)
-	const [available, setAvailable] = useState(true);
+	const [available, setAvailable] = useState(false);
 
 	const updateStock = (updatedItem) => {
 		ingredientsList.forEach(ingredient => {
 			if (ingredient.name === updatedItem) {
-					ingredient.stocked = !ingredient.stocked
+				ingredient.stocked = !ingredient.stocked
 			}
 		});
 		setIngredientsList(ingredientsList);
+		// Get all out of stock items and store in array
+		const missingIngredients = ingredientsList.filter(ingredient => ingredient.stocked === false);
+		missingIngredients.length === 0 ? setAvailable(true) : setAvailable(false);
 	}
 
   return (
