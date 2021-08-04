@@ -1,11 +1,10 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import IngredientsWrap from "./IngredientsWrap";
 
-const RecipeCard = (props) => {
-  const description = props.description;
-  const ingredients = props.ingredients;
-  const title = props.title;
-  const rating = props.rating;
+const RecipeCard = ({recipe}) => {
+  const {description, ingredients, rating, title} = recipe;
 
   return (
     <div className="recipe-card">
@@ -17,5 +16,18 @@ const RecipeCard = (props) => {
     </div>
   );
 };
+
+RecipeCard.propTypes = {
+	recipe: PropTypes.shape({
+		description: PropTypes.string,
+		ingredients: PropTypes.arrayOf(PropTypes.shape({
+			name: PropTypes.string,
+			quantity: PropTypes.number,
+			stocked: PropTypes.bool
+		})),
+		rating: PropTypes.number,
+		title: PropTypes.string
+	})
+}
 
 export default RecipeCard;
