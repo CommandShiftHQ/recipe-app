@@ -4,16 +4,22 @@ import PropTypes from "prop-types";
 import Ingredient from "./Ingredient";
 
 const IngredientsWrap = ({ ingredients }) => {
+	const [ingredientsList, setIngredientsList] = useState(ingredients)
 	const [available, setAvailable] = useState(true);
 
-	const updateStock = (event) => {
-		console.log(event.target.value);
+	const updateStock = (updatedItem) => {
+		ingredientsList.forEach(ingredient => {
+			if (ingredient.name === updatedItem) {
+					ingredient.stocked = !ingredient.stocked
+			}
+		});
+		setIngredientsList(ingredientsList);
 	}
 
   return (
     <div>
 		  {available && <div>You've got all you need!</div>}
-      {ingredients.map((ingredient) => {
+      {ingredientsList.map((ingredient) => {
         return (
           <Ingredient
 						key={ingredient.name}

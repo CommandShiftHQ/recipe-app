@@ -6,7 +6,7 @@ const Ingredient = ({ name, quantity, stocked, toggleStock }) => {
 
   const toggleBought = (event) => {
     setBought(!bought);
-    toggleStock(event);
+    toggleStock(event.target.value);
   }
 
   return (
