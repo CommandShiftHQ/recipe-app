@@ -1,8 +1,32 @@
-import React from 'react';
-import Ingredient from './Ingredient';
+import React from "react";
+import PropTypes from "prop-types";
 
-const IngredientsWrap = () => {    
-    return <Ingredient />
-}
+import Ingredient from "./Ingredient";
 
-export default IngredientsWrap
+const IngredientsWrap = ({ ingredients }) => {
+  return (
+    <div>
+      {ingredients.map((ingredient) => {
+        return (
+          <Ingredient
+            name={ingredient.name}
+            quantity={ingredient.quantity}
+            stocked={ingredient.stocked}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+IngredientsWrap.propTypes = {
+  ingredients: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      quantity: PropTypes.number,
+      stocked: PropTypes.bool,
+    })
+  ),
+};
+
+export default IngredientsWrap;
